@@ -14,6 +14,6 @@ export const config = {
   },
   "util": {
     "saltRounds":10,
-    "secretKey": "AWS CLOUD TRYOUT"
+    "secretKey": process.env.JWT_SECRET
   }
 }
