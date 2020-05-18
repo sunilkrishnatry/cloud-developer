@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     service: backend-user
+    version: v2
   name: backend-user
 spec:
   replicas: 2
@@ -10,9 +11,14 @@ spec:
     metadata:
       labels:
         service: backend-user
+        version: v2
     spec:
+      volumes:
+      - name: configmap-volume
+        configMap:
+          name: env-config
       containers:
-      - image: scheele/udacity-restapi-user
+      - image: sunilkrishnatry/udacity-c3-restapi-user
         name: backend-user 
         imagePullPolicy: Always  
         resources:
@@ -21,7 +27,9 @@ spec:
             cpu: "250m"
           limits:
             memory: "1024Mi"
-            cpu: "500m"      
+            cpu: "500m"
+        ports:
+          - containerPort: 8080      
         env:
         - name: URL
           valueFrom:
@@ -54,5 +62,3 @@ spec:
               name: env-secret
               key: POSTGRESS_USERNAME
       restartPolicy: Always
-
-
