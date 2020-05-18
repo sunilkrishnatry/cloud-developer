@@ -2,8 +2,8 @@ version: "3"
 services:
   reverseproxy:
     build:
-    context: .
-    image: sunilkrishnatry/reverseproxy 
+      context: .
+    image: sunilkrishnatry/udacity-c3-reverseproxy 
   backend_user:
     build:
       context: ../../udacity-c3-restapi-user
@@ -15,4 +15,4 @@ services:
   frontend:
     build:
       context: ../../udacity-c3-frontend  
-    image: sunilkrishnatry/udacity-c3-frontend::local
+    image: sunilkrishnatry/udacity-c3-frontend

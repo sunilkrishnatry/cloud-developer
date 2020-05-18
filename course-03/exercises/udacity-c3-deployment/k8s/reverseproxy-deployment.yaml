@@ -12,7 +12,7 @@ spec:
         service: reverseproxy
     spec:
       containers:
-      - image: sunilkrishnatry/reverseproxy
+      - image: sunilkrishnatry/udacity-c3-reverseproxy:latest
         name: reverseproxy
         imagePullPolicy: Always          
         resources:

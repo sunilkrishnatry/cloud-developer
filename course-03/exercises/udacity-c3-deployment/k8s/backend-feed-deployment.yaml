@@ -14,7 +14,7 @@ spec:
         version: v2
     spec:
       containers:
-      - image: sunilkrishnatry/udacity-c3-restapi-feed
+      - image: sunilkrishnatry/udacity-c3-restapi-feed:latest
         name: backend-feed
         imagePullPolicy: Always  
         resources:
@@ -24,8 +24,6 @@ spec:
           limits:
             memory: "1024Mi"
             cpu: "500m"                  
-        ports:
-          - containerPort: 8080
         env:
         - name: URL
           valueFrom:
